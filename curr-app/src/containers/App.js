@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Persons from '../components/Persons/Persons';
 import classes from './App.css';
-import Person from '../components/Persons/Person/Person';
+//import Person from '../components/Persons/Person/Person';
 import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
@@ -29,6 +29,16 @@ class App extends Component {
 
   componentDidMount() {
     console.log('[App.js] componentDidMunt')
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('[App.js] shouldComponentUpdate');
+    return true;
+  }
+
+
+  componentDidUpdate() {
+    console.log('[App.js] componentDidUpdate');
   }
 
   nameChangedHandler = (event, id) => {
